@@ -28,16 +28,17 @@ public class EchoServer {
                     handle(clientSocket);
                 } catch (IOException e) {
                     System.out.println("не удалось подключиться");
-                    e.printStackTrace();
+                    System.out.println(e.getMessage());
                 }
             }
         } catch (IOException e) {
             System.out.printf("вероятнее всего порт  %s занят. %n", port);
-            e.printStackTrace();
+            System.out.println(e.getMessage());
         }
     }
 
     private void handle(Socket socket) throws IOException {
+        System.err.println();
         var input = socket.getInputStream();
         var output = socket.getOutputStream();
         var isr = new InputStreamReader(input, StandardCharsets.UTF_8);

@@ -31,7 +31,7 @@ public class EchoClient {
                     writer.write(message);
                     writer.write(System.lineSeparator());
                     writer.flush();
-                    if ("bye".equalsIgnoreCase(message))
+                    if ("bye".equalsIgnoreCase(message) || "close".equalsIgnoreCase(message))
                         return;
                 }
             }
